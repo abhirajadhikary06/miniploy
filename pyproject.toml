@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "miniploy"
+version = "0.1.0"
+description = "One-stop AI-powered deployment CLI for Render, Fly.io, Vercel, Railway, Netlify"
+authors = ["Anik Chand <your-email@example.com>"]
+readme = "README.md"
+packages = [{include = "miniploy", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.12.5"}
+rich = "^13.7.0"           # nice CLI output
+pyyaml = "^6.0.1"          # config files
+openai = "^1.51.0"         # for AI features (you can swap later)
+gitpython = "^3.1.43"      # optional: detect repo / git helpers
+
+[tool.poetry.scripts]
+miniploy = "miniploy.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
